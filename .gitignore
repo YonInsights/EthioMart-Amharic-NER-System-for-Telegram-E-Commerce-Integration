@@ -1,0 +1,14 @@
+\venv
+\data
+# Python
+__pycache__/
+*.py[cod]
+
+# Jupyter Notebooks
+*.ipynb_checkpoints
+
+# OS-specific
+.DS_Store
+
+# Logs and Results
+results/
