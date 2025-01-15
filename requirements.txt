@@ -1,0 +1,32 @@
+# General utilities
+pandas
+
+# NLP and text processing
+transformers
+datasets
+sentencepiece
+
+# Deep Learning frameworks
+torch
+tensorflow
+
+# Model evaluation and metrics
+scikit-learn
+seqeval
+
+# Model interpretability
+shap
+lime
+
+# Telegram data scraping
+telethon
+
+# Visualization
+matplotlib
+seaborn
+
+# Database integration
+mysql-connector-python
+
+# Notebook environment
+jupyter
