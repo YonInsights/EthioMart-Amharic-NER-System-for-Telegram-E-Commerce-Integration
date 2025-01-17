@@ -1,6 +1,7 @@
 from telethon import TelegramClient
 import json
 import os
+import asyncio
 
 # My Telegram API credentials
 API_ID = 29267451
@@ -14,16 +15,14 @@ os.makedirs(OUTPUT_DIR, exist_ok=True)
 # Channel usernames
 CHANNELS = ['@ZemenExpress', '@nevacomputer', '@meneshayeofficial', '@ethio_brand_collection', '@Leyueqa']
 
-def fetch_messages():
+async def fetch_messages():
     # Initialize Telegram client
-    client = TelegramClient(SESSION_NAME, API_ID, API_HASH)
-    
-    # Start the client
-    with client:
+    async with TelegramClient(SESSION_NAME, API_ID, API_HASH) as client:
         for channel in CHANNELS:
             print(f"Fetching messages from {channel}...")
             messages = []
             
+            # Fetch messages asynchronously
             async for message in client.iter_messages(channel, limit=100):  # Adjust limit as needed
                 messages.append({
                     "id": message.id,
@@ -41,4 +40,4 @@ def fetch_messages():
             print(f"Saved messages from {channel} to {output_file}")
 
 if __name__ == "__main__":
-    fetch_messages()
+    asyncio.run(fetch_messages())
